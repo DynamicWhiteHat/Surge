@@ -7,11 +7,11 @@ created_at: "2026-07-13"
 
 # July 13th: Initial Research and First Schematic
 
-## Research
+### Research
 
 Today, I began my project by doing some research into the issue. I found that post-stroke patients can find themselves facing difficulties swallowing, a condition known as dysphagia. This can lead to *silent aspiration*, which is when food enters the airway without choking or other visible signs, and is very dangerous. As a result, patients struggling with dysphagia typically have recurring tests conducted to track their muscle condition and ability to swallow, with individual tests costing upwards of $2000. New research into surface electromyography (sEMG) shows that ICs like the ADS1292 are capable of performing high-quality sEMG analysis. Coupled with the AD5941 bioelectric measurement IC, a PCB could effectively measure a patient's capability to swallow. This measurement would be non-invasive, 24/7, and low-cost, which covers many problems associated with current testing methods. As such, I decided to create a PCB with these ICs.
 
-## Schematic Design
+### Schematic Design
 
 I began by creating a base schematic for an ESP-32 S3 SoC. I have created many boards with ESP-32 modules, but never just the bare SoC before. I found [this video]([url](https://www.youtube.com/watch?v=yxU_Kw2de08)) from Phil's Lab that covers exactly what I needed. I just pulled up the datasheets for the ESP-32 S3 since he used a C3, made some minor changes, and ended up with the following:
 
