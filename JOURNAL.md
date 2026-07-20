@@ -31,6 +31,7 @@ Next, I set up my board for a 4-layer design, following JLCPCB's specifications 
 # July 15th: Final Schematic and Intial PCB Layout
 
 **Schematic**
+
 I had initially planned to make a separate board for the ADS1292 IC, which would be positioned higher on the neck. I got this idea from an AI generated mockup of the device. However, I later decided that placing the IC on the same board and using and FPC cable instead would help me with routing and signal concerns. I imported the IC and placed it into my schematic. Before I started making connections, I decided to add some more safety and protection lines to my AD5941 IC, such as an inductor and an ESD protection IC. This is how it looks now:
 
 <img width="932" height="887" alt="image" src="https://github.com/user-attachments/assets/18ca424a-32ea-4c1b-b195-f8a1db232ba0" />
@@ -40,6 +41,8 @@ U9 is a TPD4E001 from TI, which is designed to catch any stray leakage. I also l
 Next, I began working on the ADS1292 IC. Similar to how I did the AD5941, I looked up a reference design online and got to work copying it. I found the reference in the TI documentation for the IC and adjusted it to match my use case. The electrode pins on this IC are IN2N, IN2P, and RLDOUT, which connect to an FPC connector. It also has the same electrode setup, with a resistor, ESD protection, and an inductor. This is how it looks:
 
 <img width="937" height="705" alt="image" src="https://github.com/user-attachments/assets/202837b8-aad9-4506-a280-f08db6f0b9d0" />
+
+**PCB**
 
 I then got to work on the PCB and did some initial layout of the IC "groups," which helps me with later placement. For example, here is the IC group layout for the AD5942:
 
