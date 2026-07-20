@@ -27,3 +27,26 @@ At the core is an ESP-32 S3 R8 coupled with a 16 MB flash chip. The battery circ
 Next, I set up my board for a 4-layer design, following JLCPCB's specifications for their JLC04161H-7628 stackup, which is cheap and good for impedance control. I used KiCad's built in calculator to get a track width of 0.3812 mm for a 50 ohm impedance trace for the antenna.
 
 **Total time spent: 4 hours**
+
+# July 15th: Final Schematic and Intial PCB Layout
+
+**Schematic**
+I had initially planned to make a separate board for the ADS1292 IC, which would be positioned higher on the neck. I got this idea from an AI generated mockup of the device. However, I later decided that placing the IC on the same board and using and FPC cable instead would help me with routing and signal concerns. I imported the IC and placed it into my schematic. Before I started making connections, I decided to add some more safety and protection lines to my AD5941 IC, such as an inductor and an ESD protection IC. This is how it looks now:
+
+<img width="932" height="887" alt="image" src="https://github.com/user-attachments/assets/18ca424a-32ea-4c1b-b195-f8a1db232ba0" />
+
+U9 is a TPD4E001 from TI, which is designed to catch any stray leakage. I also lowered the resistor value from 10K to 1K to allow the signals to be better intercepted, as previously, it would be very difficult for the IC to read signals that have gone through a 10K resistor. Finally, I also added inductors on the end of the connection, right before the line goes out to the electrode, to catch any RF/EMI signals and remove them before they reach the IC and corrupt its readings.
+
+Next, I began working on the ADS1292 IC. Similar to how I did the AD5941, I looked up a reference design online and got to work copying it. I found the reference in the TI documentation for the IC and adjusted it to match my use case. The electrode pins on this IC are IN2N, IN2P, and RLDOUT, which connect to an FPC connector. It also has the same electrode setup, with a resistor, ESD protection, and an inductor. This is how it looks:
+
+<img width="937" height="705" alt="image" src="https://github.com/user-attachments/assets/202837b8-aad9-4506-a280-f08db6f0b9d0" />
+
+I then got to work on the PCB and did some initial layout of the IC "groups," which helps me with later placement. For example, here is the IC group layout for the AD5942:
+
+<img width="342" height="752" alt="image" src="https://github.com/user-attachments/assets/307d8c91-e084-4aef-a0ac-cec111e13340" />
+
+I did that with most of the major parts, then made my Edge.Cuts for the outline. It is a rough estimate of the size and will be edited once I finish placement. I decided to place the antenna on the left side, as that will help keep RF signals away from the analog ICs, which will go on the right. This is my current PCB:
+
+<img width="541" height="797" alt="image" src="https://github.com/user-attachments/assets/934bd13e-df0a-49fc-acc1-e3af74ac380f" />
+
+**Total time spent: 3 hours**
