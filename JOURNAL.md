@@ -28,7 +28,7 @@ Next, I set up my board for a 4-layer design, following JLCPCB's specifications 
 
 **Total time spent: 4 hours**
 
-# July 15th: Final Schematic and Intial PCB Layout
+# July 15th: Final Schematic and Initial PCB Layout
 
 **Schematic**
 
@@ -53,3 +53,9 @@ I did that with most of the major parts, then made my Edge.Cuts for the outline.
 <img width="541" height="797" alt="image" src="https://github.com/user-attachments/assets/934bd13e-df0a-49fc-acc1-e3af74ac380f" />
 
 **Total time spent: 3 hours**
+
+# July 20th: More PCB Work
+
+I did some more PCB work today. I added the buttons in the top right and figured out where to put the power section. I decided to move the ESP32 chip down to accommodate the power stuff towards the top; that way it sort of blends in with the rest of the devices for the USB. Afterwards, I added the analog devices on the board, but then I realized that it didn't look good where it was, so I asked in Slack for help and am still awaiting a response. For now, this is where I have it.
+
+<img width="552" height="791" alt="image" src="https://github.com/user-attachments/assets/80d98088-4927-4bb5-82e8-63776b607e8f" />
