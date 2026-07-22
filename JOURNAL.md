@@ -61,3 +61,21 @@ I did some more PCB work today. I added the buttons in the top right and figured
 <img width="552" height="791" alt="image" src="https://github.com/user-attachments/assets/80d98088-4927-4bb5-82e8-63776b607e8f" />
 
 **Total time spent: 1 hour**
+
+# July 21st: Major PCB Work
+
+Today I got a lot of the PCB layout done. I'm still working on the analog section, but mostly everything else is laid out. 
+<img width="457" height="558" alt="image" src="https://github.com/user-attachments/assets/6dd0cbd1-2044-4203-880f-87bb838829d3" />
+
+I began by deleting the bottom extra space after the antenna, as I didn't think that I would need to use that space, and it makes the shape much more pleasing to look at. However, I moved the antenna down a bit before that to accommodate the loss of space that I could have used earlier. I then placed some final components that I forgot about, such as the MAX17048:
+<img width="813" height="700" alt="image" src="https://github.com/user-attachments/assets/89fe3f41-664e-4297-8b00-a547e4b4536b" />
+
+I shifted around some of the surrounding ICs to make it align and look better. In the image above, you can also see that I added the connector for the battery and NTC thermistor. I originally didn't know where to put the two, as I thought they would be in the way in their current position and make routing hard. However, I moved the ESP32 and its capacitors down to make space, which fits well.
+
+One of the largest changes I made was to swap out the ZIF connector for a 10-pin JST connector. I have decided that since this board is getting quite large, it would be better to mount it on the back of the neck and run wires to the front electrodes. I have found the following wires on AliExpress, which should work well:
+
+<img width="467" height="328" alt="image" src="https://github.com/user-attachments/assets/29973047-4216-46ee-b0d8-d696b027d782" />
+
+Finally, I also decided to place a shield can over the analog ICs. I tried my best to move them away from RF and digital lines, but they will still end up very close to the antenna. I placed fencing vias around the antenna to block its frequencies from the analog ICs, and I plan to use Harwin shield can clips to house a custom-cut aluminum shield can to prevent any interference from the air.
+
+**Total time spent: 3 hours**
