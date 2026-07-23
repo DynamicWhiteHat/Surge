@@ -79,3 +79,14 @@ One of the largest changes I made was to swap out the ZIF connector for a 10-pin
 Finally, I also decided to place a shield can over the analog ICs. I tried my best to move them away from RF and digital lines, but they will still end up very close to the antenna. I placed fencing vias around the antenna to block its frequencies from the analog ICs, and I plan to use Harwin shield can clips to house a custom-cut aluminum shield can to prevent any interference from the air.
 
 **Total time spent: 3 hours**
+# July 22nd: Finish Placement and Begin Routing
+
+I finally figured out how to fit the two analog ICs. They are still very close to the antenna, and I am relying mainly on the combination of a solid ground pour, fencing vias, and a shield cap to prevent any interference to the devices. I decided to place the ADS1292 furthest from the antenna since it is the most sensitive of the two. I also had to extend the board a little bit on the bottom to allow the resistors and capacitors for the AD5940 to fit, since the IC itself is larger than the ADS1292. I flanked both sides of the JST connector with the ESD protection diodes, and that was all for placement. This is what I have for now:
+
+<img width="582" height="678" alt="image" src="https://github.com/user-attachments/assets/2a0e612b-4cf6-48cf-97a5-c94807d3d962" />
+
+I then got started with routing the PCB. It is pretty difficult since everything is so compact. I decided to start with some of the easier stuff first, like the short connections between two resistors. While routing my flash, I noticed that the ESP32 symbol in my schematic seemed off. Referencing back to my original screenshot, I realized that, at some point, the symbol switched its pins around. I don't know how that happened, but I was able to undo it and copy the original symbol. I have 41 tracks left to route. This is what I have right now:
+
+<img width="542" height="657" alt="image" src="https://github.com/user-attachments/assets/2ba198fc-471d-4c31-bb31-0c26bda78307" />
+
+**Total time spent: 2.5 hours**
