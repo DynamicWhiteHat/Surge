@@ -90,3 +90,25 @@ I then got started with routing the PCB. It is pretty difficult since everything
 <img width="542" height="657" alt="image" src="https://github.com/user-attachments/assets/2ba198fc-471d-4c31-bb31-0c26bda78307" />
 
 **Total time spent: 2.5 hours**
+# July  23rd: Finish PCB
+
+I finished routing the tracks. There wasn't much in the way of routing, as I just had to make some tweaks to existing tracks and vias to make new ones fit. However, I did have to make a major change in the schematic. While routing my AD5940, I noticed that I accidentally connected the AD5940 interrupt pin to the START pin of the ADS1292. This was incorrect. Up until now, I had been relying mostly on Gemini and Claude while referencing a bit of the documentation for the two ICs since I didn't want to read 160 pages. However, once I noticed this small mistake that both AIs missed, I decided to check the wiring myself. I pulled up the pinouts of the ADS1292 first. I referenced each pin and checked its description to see what it should be connected to. For example, the VREFN pin:
+<img width="767" height="27" alt="image" src="https://github.com/user-attachments/assets/d2809e29-7e32-4efd-bac8-a1087fed68ff" />
+For other pins, they gave solely a description of what it was for. In such cases, I searched through the datasheet to either find a connection recommendation or a typical layout of it. Once I finished all the pins, this is what I ended up with (not much changed):
+<img width="1110" height="830" alt="image" src="https://github.com/user-attachments/assets/93b5e12e-9540-4a75-afed-42b867923eec" />
+
+There was a lot more change for the AD5940 chip. While looking through the datasheet, I found this figure for 4-wire bioimpedance measuring, which is what I am trying to do:
+
+<img width="791" height="516" alt="image" src="https://github.com/user-attachments/assets/aace7ead-a46c-4e5c-b176-a43e4f7567d2" />
+
+This was much different from my schematic, as I was using the RE0, SE0, and DE0 pins instead of AIN1-3. I copied the figure, referenced an existing board for resistor vlaues, and came up with this new design:
+
+<img width="712" height="681" alt="image" src="https://github.com/user-attachments/assets/3df61f9a-fbde-43bf-99b0-197fb3e82b24" />
+
+After that, I moved some resistors around on the board, finished routing, and ended up with this:
+
+<img width="532" height="612" alt="image" src="https://github.com/user-attachments/assets/46f8cd53-4805-4b6f-8677-5cebe5ba2832" />
+
+The white rectangle is temporary; it is to show where the shield cap goes.
+
+**Total time spent: 3.5 hours**
