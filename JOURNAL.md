@@ -1,5 +1,5 @@
 ---
-title: "Surge"
+title: "Rebound"
 author: "DynamicWhiteHat"
 description: "A Low-Cost Dysphagia Patch for Post-Stroke Patients"
 created_at: "2026-07-13"
